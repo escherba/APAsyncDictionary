@@ -158,6 +158,16 @@
     }];
 }
 
+- (NSDictionary*)underlyingDictionary
+{
+    __block NSDictionary *object = nil;
+    [self runDictionarySynchronousReadBlock:^(NSMutableDictionary *dictionary)
+     {
+         object = [dictionary copy];
+     }];
+    return object;
+}
+
 #pragma mark - private
 
 - (void)runDictionaryAsynchronousReadBlock:(void(^)(NSMutableDictionary *dictionary))operationBlock

@@ -27,4 +27,6 @@
 - (void)allKeysCallback:(void(^)(NSArray *keys))callback;
 - (void)allObjectsCallback:(void(^)(NSArray *objects))callback;
 
+- (NSDictionary*)underlyingDictionary;
+
 @end
